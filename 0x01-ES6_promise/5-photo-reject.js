@@ -1,5 +1,3 @@
-export default function signUpUser(firstName, lastName) {
-  return new Promise((resolve, reject) => {
-    resolve({ firstName, lastName });
-  });
+export default function uploadPhoto(filename) {
+  return Promise.reject(new Error(`${filename} cannot be processed`));
 }
