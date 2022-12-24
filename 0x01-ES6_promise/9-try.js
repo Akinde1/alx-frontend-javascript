@@ -3,11 +3,21 @@ export default function guardrail(mathFunction) {
 
   try {
     queue.push(mathFunction());
-  } catch (error) {
-    queue.push(String(error));
+  } catch (err) {
+    queue.push(err.toString());
   } finally {
-    queue.push("Guardrail was processed");
+    queue.push('Guardrail was processed');
   }
+  return queue;
+}export default function guardrail(mathFunction) {
+  const queue = [];
 
+  try {
+    queue.push(mathFunction());
+  } catch (err) {
+    queue.push(err.toString());
+  } finally {
+    queue.push('Guardrail was processed');
+  }
   return queue;
 }
